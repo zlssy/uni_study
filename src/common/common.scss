@@ -1,0 +1,34 @@
+
+.f-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.f-row{
+    flex-direction: row;
+}
+.f-column{
+    flex-direction: column;
+}
+
+.f-test-color{
+    color: $uni-color-primary;
+}
+
+.f-row-center{
+    justify-content: center;
+}
+
+.f-column-center{
+    justify-items: center;
+}
+
+.f-text-center{
+    text-align: center;
+}
+
+@for $var from 2 through 5 {
+    .f-row-#{$var} {
+        width: percentage(1/$var);
+    }
+}
