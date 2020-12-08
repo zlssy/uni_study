@@ -38,8 +38,28 @@
     @extend .f-row-center;
 }
 
+.f-text-center{
+    text-align: center;
+}
+
 @for $var from 2 through 5 {
     .f-row-#{$var} {
         width: percentage(1/$var);
     }
+}
+
+.main-container{
+    // /* #ifdef H5*/ 
+    // margin-top: $navBarFullHeight + $statusBarHeight;
+    // /* #endif */
+
+    // /* #ifdef MP-WEIXIN*/ 
+    // margin-top: $navBarFullHeight;
+    // /* #endif */
+    
+    margin-top: $navBarFullHeight + $statusBarHeight;
+}
+.main-content{
+    width: 100%;
+    margin: 0 24px;
 }

@@ -30,7 +30,7 @@
             :class="[searchIcon]"
           />
         </view>
-        <text v-else>{{ title }}</text>
+        <text class="main-title" v-else>{{ title }}</text>
       </view>
       <view class="right flex f-center" :class="[extRightClass]"
         ><slot name="right" />
@@ -49,6 +49,8 @@ export default {
     extContentClass: String,
     extRightClass: String,
     navBarInnerStyle: String,
+    searchBody:String,
+    searchIcon:String,
     back: {
       type: Boolean,
       default: false,
@@ -82,17 +84,17 @@ export default {
 @import '../../common/common.scss';
 
 .th-nav-bar {
-  $nav-bar-full-height: 97rpx;
 
   .th-nav-bar-inner {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: $nav-bar-full-height;
-    padding-top: 20px;
+    height: $navBarFullHeight;
+    padding-top: $statusBarHeight;
     background-color: $primary;
     color: white;
+    z-index: 5001;
 
     .left {
       position: relative;
@@ -122,6 +124,12 @@ export default {
           position: relative;
           right: 24px;
         }
+      }
+      .main-title{
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
       }
     }
     .right {
