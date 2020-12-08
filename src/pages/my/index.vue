@@ -8,12 +8,8 @@
 export default {
     data(){
         return {
-            test:'This is test content'
-        }
-    },
-    onLoad(options){
-        const {id} = options;
-        console.log(`Param is ${id}`);
+            test:"个人中心"
+        };
     }
 }
 </script>

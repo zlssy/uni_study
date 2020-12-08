@@ -3,20 +3,55 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "腾讯健康",
+				"navigationStyle":"custom"
 			}
 		},
 		{
-			"path":"pages/list/list",
-			"style":{
-				"navigationBarTitleText":"List Info"
+			"path": "pages/healthy/index",
+			"style": {
+				"navigationBarTitleText": "腾讯健康"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "腾讯健康"
 			}
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "#ffffff",
+		"navigationBarTitleText": "腾讯健康",
+		"navigationBarBackgroundColor": "#0075ff",
+		"backgroundColor": "#f6f6f6"
+	},
+	"tabBar": {
+		"color": "#000000",
+		"selectedColor": "#0176ff",
+		"backgroundColor": "white",
+		"position": "bottom",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/images/home.png",
+				"selectedIconPath": "static/images/home_active.png"
+			},
+			{
+				"pagePath": "pages/healthy/index",
+				"text": "健康",
+				"iconPath": "static/images/healthy.png",
+				"selectedIconPath": "static/images/healthy_active.png"
+			},
+			{
+				"pagePath": "pages/my/index",
+				"text": "我的",
+				"iconPath": "static/images/my.png",
+				"selectedIconPath": "static/images/my_active.png"
+			}
+		]
 	}
+	
 }
