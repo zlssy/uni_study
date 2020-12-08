@@ -15,7 +15,11 @@
         <slot v-else name="left" />
       </view>
       <view class="content flex f-center" :class="[extContentClass]">
-        <view class="search-container flex f-center" v-if="searchBar">
+        <view
+          class="search-container flex f-center"
+          v-if="searchBar"
+          @tap="handlerSearch"
+        >
           <view class="search-body" :class="[searchBody]">{{
             searchText
           }}</view>
@@ -24,12 +28,13 @@
             class="search-icon"
             size="16"
             :class="[searchIcon]"
-            @tap="handlerSearch"
           />
         </view>
         <text v-else>{{ title }}</text>
       </view>
-      <view class="right flex f-center" :class="[extRightClass]"><slot name="right"/></view>
+      <view class="right flex f-center" :class="[extRightClass]"
+        ><slot name="right" />
+      </view>
     </view>
   </view>
 </template>
@@ -67,7 +72,7 @@ export default {
   },
   methods: {
     handlerSearch() {
-      this.$emit('onSearch');
+      this.$emit('search');
     },
   },
 };

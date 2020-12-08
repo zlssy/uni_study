@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <navbar searchBar>
+    <navbar searchBar @search="search">
         <view class="city-choose" slot="left">
           <text>{{ cityName }}</text>
           <view class="iconfont iconxiangxia"></view>
@@ -23,7 +23,11 @@ export default {
   onLoad() {
     console.log('page onload');
   },
-  methods: {},
+  methods: {
+	  search(){
+		  console.log('goto search page.');
+	  }
+  },
 };
 </script>
 
