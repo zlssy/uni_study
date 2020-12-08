@@ -6,15 +6,15 @@
       :style="navBarInnerStyle"
     >
       <view
-        class="left f-container"
+        class="left f-container f-center"
         :class="{ ios: systemInfo.ios, android: !systemInfo.ios }"
       >
-        <view v-if="!$slots.left" class="f-container f-column-center">
+        <view v-if="!$slots.left" class="f-container f-center">
           <view class="iconfont iconfanhui"></view>
         </view>
         <slot v-else name="left" />
       </view>
-      <view class="content" :class="[extContentClass]">
+      <view class="content flex f-center" :class="[extContentClass]">
         <text v-if="title">{{ title }}</text>
         <view v-else-if="searchBar">
           <view class="search-body" :class="[searchBody]">{{
@@ -55,6 +55,11 @@ export default {
   data() {
     return {};
   },
+  computed:{
+      systemInfo(){
+          return {};
+      }
+  },
   methods: {
     handlerSearch() {
       this.$emit('onSearch');
@@ -68,7 +73,6 @@ export default {
 
 .th-nav-bar {
   $nav-bar-full-height: 97rpx;
-  background-color: $primary;
 
   .th-nav-bar-inner {
     position: fixed;
@@ -77,15 +81,16 @@ export default {
     width: 100%;
     height: $nav-bar-full-height;
     padding-top: 20px;
+    background-color: $primary;
+    color: white;
 
     .left {
       position: relative;
-      width: 100rpx;
+      width: 120rpx;
     }
     .content {
       position: relative;
       flex: 1;
-      color: black;
     }
     .right {
       position: relative;

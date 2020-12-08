@@ -1,6 +1,10 @@
 @import "./variables";
 @import "./iconfont";
 
+.flex{
+    display: flex;
+}
+
 .f-container{
     width: 100%;
     display: flex;
@@ -27,6 +31,11 @@
 
 .f-text-center{
     text-align: center;
+}
+
+.f-center{
+    @extend .f-column-center;
+    @extend .f-row-center;
 }
 
 @for $var from 2 through 5 {

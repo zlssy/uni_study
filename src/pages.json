@@ -21,7 +21,7 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "#ffffff",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "腾讯健康",
 		"navigationBarBackgroundColor": "#0075ff",
 		"backgroundColor": "#f6f6f6"
