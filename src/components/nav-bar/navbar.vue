@@ -15,20 +15,21 @@
         <slot v-else name="left" />
       </view>
       <view class="content flex f-center" :class="[extContentClass]">
-        <text v-if="title">{{ title }}</text>
-        <view v-else-if="searchBar">
+        <view class="search-container flex f-center" v-if="searchBar">
           <view class="search-body" :class="[searchBody]">{{
             searchText
           }}</view>
           <icon
             type="search"
             class="search-icon"
+            size="16"
             :class="[searchIcon]"
             @tap="handlerSearch"
           />
         </view>
+        <text v-else>{{ title }}</text>
       </view>
-      <view class="right" :class="[extRightClass]"><slot name="right"/></view>
+      <view class="right flex f-center" :class="[extRightClass]"><slot name="right"/></view>
     </view>
   </view>
 </template>
@@ -36,7 +37,7 @@
 <script>
 export default {
   props: {
-    title: String,
+    title: { type: String, default: '腾讯医疗' },
     extClass: String,
     navBarContainerStyle: String,
     extInnerClass: String,
@@ -51,20 +52,24 @@ export default {
       type: String,
       default: '点击搜索',
     },
+    searchBar: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {};
   },
-  computed:{
-      systemInfo(){
-          return {};
-      }
+  computed: {
+    systemInfo() {
+      return {};
+    },
   },
   methods: {
     handlerSearch() {
       this.$emit('onSearch');
     },
-  }
+  },
 };
 </script>
 
@@ -91,6 +96,28 @@ export default {
     .content {
       position: relative;
       flex: 1;
+      justify-content: flex-start;
+
+      .search-container {
+        width: 80%;
+
+        .search-body {
+          width: 100%;
+          height: 48rpx;
+          line-height: 48rpx;
+          border-radius: 24rpx;
+          background-color: white;
+          color: #666666;
+          text-align: center;
+          font-size: 12px;
+        }
+
+        .search-icon {
+          width: 24px;
+          position: relative;
+          right: 24px;
+        }
+      }
     }
     .right {
       position: relative;

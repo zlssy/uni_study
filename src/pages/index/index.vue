@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <navbar :title="title">
+    <navbar searchBar>
         <view class="city-choose" slot="left">
           <text>{{ cityName }}</text>
           <view class="iconfont iconxiangxia"></view>
@@ -32,5 +32,6 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: center;
 }
 </style>
