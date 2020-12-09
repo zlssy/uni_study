@@ -1,5 +1,5 @@
 <template>
-  <view class="th-tag f-container" :class="[extClass]" @tap="handlerClick">
+  <view class="th-tag flex" :class="[extClass]" @tap="handlerClick">
     <slot name="before" />
     <text>{{ name }}</text>
     <slot name="after" />
