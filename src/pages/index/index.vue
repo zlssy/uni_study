@@ -142,8 +142,8 @@ export default {
 
       .th-tag {
         color: #666;
-        background-color: red;
-        font-size: 11px;
+        background-color: white;
+        font-size: 12px;
         padding: 1px 8px;
       }
     }
@@ -209,8 +209,8 @@ export default {
     color: #f6f6f6;
   }
   ::v-deep .th-tag {
-    width: 80px;
-    font-size: 10px;
+    width: 90px;
+    font-size: 12px;
     color: $primary;
     padding: 3px 6px;
     text-align: center;
@@ -223,7 +223,6 @@ export default {
     animation: th-shake 2s 0s infinite;
   }
   .quick-links-tag {
-    display: block;
     margin-top: 6px;
   }
 }
