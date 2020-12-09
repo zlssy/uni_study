@@ -11,7 +11,7 @@
             }"
           >
             <badge-icon class="menus-group-icon">
-              <tag slot="badge" name="测试" style="background:red;"></tag>
+              <tag slot="badge" name="测试"></tag>
               <view class="iconfont icontijiao menus-group-icon-item"></view>
             </badge-icon>
             <view class="menus-group-text"><text>AAA</text></view>
@@ -30,7 +30,7 @@ export default {
   props: {
     menus: {
       type: Array,
-      default: [],
+      default: () => [],
     },
     row: {
       type: Number,
@@ -82,10 +82,15 @@ export default {
 
       ::v-deep .menus-group-icon {
         flex: 4;
-        .th-badge-icon .badge-icon{
-          .th-tag {
-            background-color: red;
-            color: red;
+
+        .th-badge-icon {
+          background-color: yellow;
+          .badge-icon {
+            background-color: blue;
+            .th-tag {
+              background-color: red;
+              color: red;
+            }
           }
         }
         .menus-group-icon-item {

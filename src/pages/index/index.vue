@@ -142,7 +142,7 @@ export default {
 
       .th-tag {
         color: #666;
-        background-color: white;
+        background-color: red;
         font-size: 11px;
         padding: 1px 8px;
       }

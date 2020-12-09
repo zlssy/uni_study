@@ -18,8 +18,9 @@ export default {
   props: {
     data: {
       type: Array,
-      default: [],
+      default: () => [],
     },
+    extClass: String,
   },
   methods: {
     handlerItemTap(index) {
