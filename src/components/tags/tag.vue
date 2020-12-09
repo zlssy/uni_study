@@ -28,6 +28,7 @@ export default {
 @import '../../common/common.scss';
 
 .th-tag {
+  box-sizing: border-box;
   padding: 1px 4px;
   border-radius: 12px;
   background-color: white;

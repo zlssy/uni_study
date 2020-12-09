@@ -1,6 +1,7 @@
 <template>
   <view class="th-tag-group" :class="[extClass]">
     <tag
+      class="th-tag-item"
       v-for="(tag, index) in data"
       :key="index"
       :name="tag.name"
@@ -35,7 +36,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
 
-  tag {
+  .th-tag-item {
     margin: 0 4px;
   }
 }

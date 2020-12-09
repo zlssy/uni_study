@@ -64,20 +64,21 @@
           </view>
         </view>
       </view>
-      <view class="menus main-content">
-
+      <view class="main-content menus">
+        <slide-menus></slide-menus>
       </view>
     </view>
   </view>
 </template>
 
 <script>
+import SlideMenus from '../../components/menus/slide-menus.vue';
 import navbar from '../../components/nav-bar/navbar.vue';
 import TagGroup from '../../components/tags/tag-group.vue';
 import Tag from '../../components/tags/tag.vue';
 
 export default {
-  components: { navbar, TagGroup, Tag },
+  components: { navbar, TagGroup, Tag, SlideMenus },
   data() {
     return {
       title: '腾讯健康',
@@ -131,15 +132,22 @@ export default {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   background-color: $primary;
-}
-.hot-container {
-  color: #c6c6c6;
-  align-items: center;
-  margin-top: 12px;
-}
-::v-deep .index-tags .th-tag {
-  color: #666;
-  background-color: white;
+
+  .hot-container {
+    color: #c6c6c6;
+    align-items: center;
+    margin-top: 12px;
+
+    ::v-deep .index-tags .th-tag-item {
+
+      .th-tag {
+        color: #666;
+        background-color: white;
+        font-size: 11px;
+        padding: 1px 8px;
+      }
+    }
+  }
 }
 .index-search {
   border-radius: 12px;
@@ -201,14 +209,14 @@ export default {
     color: #f6f6f6;
   }
   ::v-deep .th-tag {
-    width: 60px;
+    width: 80px;
     font-size: 10px;
     color: $primary;
     padding: 3px 6px;
     text-align: center;
   }
   .quick-links-money {
-    width: 16px;
+    width: 20px;
     font-size: 12px;
     text-align: center;
     color: red;
@@ -219,7 +227,7 @@ export default {
     margin-top: 6px;
   }
 }
-.menus{
+.menus {
   height: 260px;
   background-color: white;
   border-radius: 12px;
