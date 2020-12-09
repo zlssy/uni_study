@@ -1,10 +1,8 @@
 <template>
-  <view
-    class="th-tag"
-    :class="[extClass]"
-    @tap="handlerClick"
-  >
-    {{ name }}
+  <view class="th-tag f-container" :class="[extClass]" @tap="handlerClick">
+    <slot name="before" />
+    <text>{{ name }}</text>
+    <slot name="after" />
   </view>
 </template>
 
@@ -32,5 +30,7 @@ export default {
 .th-tag {
   padding: 1px 4px;
   border-radius: 12px;
+  background-color: white;
+  color: black;
 }
 </style>

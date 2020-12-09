@@ -1,65 +1,87 @@
-@import "./variables";
-@import "./iconfont";
+@import './variables';
+@import './iconfont';
 
-.flex{
-    display: flex;
+page{
+    background-color: $commonBgColor;
+    height: auto;
 }
-
-.f-container{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-.f-row{
-    flex-direction: row;
-}
-.f-column{
-    flex-direction: column;
+view {
+  font-size: 12px;
 }
 
-.f-test-color{
-    color: $uni-color-primary;
+.flex {
+  display: flex;
 }
 
-.f-row-center{
-    justify-content: center;
+.f-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.f-row {
+  flex-direction: row;
+}
+.f-column {
+  flex-direction: column;
 }
 
-.f-column-center{
-    align-items: center;
+.f-test-color {
+  color: $uni-color-primary;
 }
 
-.f-text-center{
-    text-align: center;
+.f-row-center {
+  justify-content: center;
 }
 
-.f-center{
-    @extend .f-column-center;
-    @extend .f-row-center;
+.f-column-center {
+  align-items: center;
 }
 
-.f-text-center{
-    text-align: center;
+.f-text-center {
+  text-align: center;
+}
+
+.f-center {
+  @extend .f-column-center;
+  @extend .f-row-center;
+}
+
+.f-text-center {
+  text-align: center;
 }
 
 @for $var from 2 through 5 {
-    .f-row-#{$var} {
-        width: percentage(1/$var);
+  .f-row-#{$var} {
+    width: percentage(1 / $var);
+  }
+}
+
+.main-container {
+  // /* #ifdef H5*/
+  // margin-top: $navBarFullHeight + $statusBarHeight;
+  // /* #endif */
+
+  // /* #ifdef MP-WEIXIN*/
+  // margin-top: $navBarFullHeight;
+  // /* #endif */
+
+  margin-top: $navBarFullHeight + $statusBarHeight;
+}
+.main-content {
+  margin: 0 24px;
+}
+
+$shakeKeys: 4px, 2px, 0px, -4px, -2px, 0px;
+@keyframes th-shake {
+  @for $i from 0 through 25 {
+    #{$i*2%} {
+      transform: translateX(nth($shakeKeys, $i%6 + 1));
     }
-}
-
-.main-container{
-    // /* #ifdef H5*/ 
-    // margin-top: $navBarFullHeight + $statusBarHeight;
-    // /* #endif */
-
-    // /* #ifdef MP-WEIXIN*/ 
-    // margin-top: $navBarFullHeight;
-    // /* #endif */
-    
-    margin-top: $navBarFullHeight + $statusBarHeight;
-}
-.main-content{
-    width: 100%;
-    margin: 0 24px;
+  }
+  51% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
